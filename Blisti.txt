@@ -1,0 +1,29 @@
+
+
+int sensorPin = 4;    //Microphone Sensor Pin on analog 4
+int RedLED = 4; 
+int sensorValue = 0;
+
+void setup() {
+pinMode(RedLED, OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  
+  sensorValue = analogRead(sensorPin); 
+
+Serial.println(sensorValue);
+  with:
+if (sensorValue < 509){
+   Serial.println(sensorValue);
+}
+
+
+  if (sensorValue>2000){  //The 'silence' sensor value is 509-511
+    digitalWrite(RedLED,HIGH);
+ 
+} else {
+    digitalWrite(RedLED,LOW);
+}
+}
